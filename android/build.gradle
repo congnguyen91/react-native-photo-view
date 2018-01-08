@@ -16,7 +16,7 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "25.0.0"
+    buildToolsVersion "25.0.1"
 
     defaultConfig {
         minSdkVersion 16
@@ -29,8 +29,13 @@ android {
 }
 
 repositories {
-    mavenCentral()
+    mavenLocal()
     jcenter()
+    jcenter()
+    maven {
+       // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
+       url "$projectDir/../../../node_modules/react-native/android"
+    }
 }
 
 dependencies {
